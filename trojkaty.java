@@ -10,13 +10,11 @@ class Trojkaty {
      * @param {float} c - Długość trzeciego boku.
      */
     public static void jakiTrojkat(float a, float b, float c){
-<<<<<<< HEAD
-         
-||||||| 644dfa7
+
+        
          if (a == b && b == c && a == c) {
              System.out.println("Trójkąt równoboczny"); 
-         }
-=======
+        }
          if (a == b && b == c && a == c) {
              System.out.println("Trójkąt równoboczny"); 
          }
@@ -26,9 +24,22 @@ class Trojkaty {
          if (a == b || b == c || a == c) {
                     System.out.println("Trójkąt równoramienny");
                 }
->>>>>>> feature-rownoramienny
+
          // TODO: tutaj trzeba bedzie dopisac inne przypadki
     }
+
+      /**
+                * Funkcja do sprawdzenia czy trójkąt o podanych bokach może zostać zbudowany.
+                * @param {float} a - Długość pierwszego boku.
+                * @param {float} b - Długość drugiego boku.
+                * @param {float} c - Długość trzeciego boku.
+                */
+               public static boolean czyIstniejeTrojkat(float a, float b, float c){
+                  if (a + b <= c) return false;
+                  if (a + c <= b) return false;
+                  if (b + c <= a) return false;
+                  return true;
+               }
     /** Wyświetla ekran pomocy */
     public static void pomoc(){
         System.out.println("Acme INC. (C) 2022");
@@ -48,7 +59,10 @@ class Trojkaty {
                     System.out.println("Długości boków trójkąta muszą być nieujemne!");
                     System.exit(2);
                 }
-
+	 if (!czyIstniejeTrojkat(a, b, c)) {
+                    System.out.println("Z podanych długości boków nie da się zbudować trójkąta");
+                    System.exit(3);
+                   }
                 jakiTrojkat(a, b, c);
         
         jakiTrojkat(a, b, c);

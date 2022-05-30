@@ -11,19 +11,25 @@ class Trojkaty {
      */
     public static void jakiTrojkat(float a, float b, float c){
 
+
         
          if (a == b && b == c && a == c) {
              System.out.println("Trójkąt równoboczny"); 
         }
+
+         
+
          if (a == b && b == c && a == c) {
              System.out.println("Trójkąt równoboczny"); 
          }
-	 if (a == b && b == c && a == c) {
-                    System.out.println("Trójkąt równoboczny");
-                }
          if (a == b || b == c || a == c) {
                     System.out.println("Trójkąt równoramienny");
+		    }
+	 if (czyProstokatny(a, b, c)) {
+                    System.out.println("Trójkąt prostokątny");
+                  }
                 }
+
 
          // TODO: tutaj trzeba bedzie dopisac inne przypadki
     }
@@ -40,6 +46,22 @@ class Trojkaty {
                   if (b + c <= a) return false;
                   return true;
                }
+
+		
+	 // feature-rownoramienny
+         // TODO: tutaj trzeba bedzie dopisac inne przypadki
+
+             public static boolean czyProstokatny(float a, float b, float c){
+                   if (a * a + b * b == c*c) return true;
+                   if (b * b + c * c == a*a) return true;
+                   if (a * a + c * c == b*b) return true;
+                   return false;
+               }      
+            
+  
+  
+  
+
     /** Wyświetla ekran pomocy */
     public static void pomoc(){
         System.out.println("Acme INC. (C) 2022");
